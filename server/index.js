@@ -175,7 +175,7 @@ const emitPollResult = async ()=>{
         answeredCount: Object.keys(pollAnswers).length,
     });
          
-      io.to(currentPoll.ClassroomId).emit('poll_result', {
+      io.to(currentPoll.classroomId).emit('poll_result', {
         question: currentPoll?.question,
         options: currentPoll?.options,
         results: resultCount,

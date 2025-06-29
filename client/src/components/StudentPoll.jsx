@@ -31,7 +31,9 @@ const StudentPoll = ({ question, options, studentName, duration, onKick }) => {
   }, [question]);
 
   useEffect(() => {
-    socket.on('poll_result', setResults);
+    socket.on('poll_result', (data)=>{
+      setResults(data)
+    });
     return () => socket.off('poll_result');
   }, []);
 
