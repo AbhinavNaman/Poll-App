@@ -13,7 +13,10 @@ const auth = require('./middleware/auth'); // Import the auth middleware for pro
 const classroomRoutes = require('./routes/classroom'); // Import the classroom routes
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://your-frontend.netlify.app',
+  credentials: true
+}));
 app.use(express.json());
 app.use('/api/auth', authRoutes); // Use the auth routes for handling authentication
 app.use('/api/classroom', classroomRoutes); // Use the classroom routes with authentication middleware
@@ -34,7 +37,7 @@ const server = http.createServer(app); //Creates a raw HTTP server from the Expr
 //binds the socket.io to the HTTP server
 const io = new Server(server, {
     cors:{
-        origin:'*',
+        origin:"https://your-frontend.netlify.app",
         methods: ["GET", "POST"],
     }
 })

@@ -1,5 +1,5 @@
 // To avoid repeating Authorization: Bearer token everywhere, we will craete a custom fetch function
-export const API_BASE = 'http://localhost:8000';
+export const API_BASE = process.env.BASE_URL;
 
 export const getToken =()=> localStorage.getItem('token') || null;
 
