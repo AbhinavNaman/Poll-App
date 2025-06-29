@@ -14,7 +14,7 @@ const classroomRoutes = require('./routes/classroom'); // Import the classroom r
 
 const app = express();
 app.use(cors({
-  origin: 'https://your-frontend.netlify.app',
+  origin: 'https://poll-app-abhinavnaman.vercel.app',
   credentials: true
 }));
 app.use(express.json());
@@ -37,7 +37,7 @@ const server = http.createServer(app); //Creates a raw HTTP server from the Expr
 //binds the socket.io to the HTTP server
 const io = new Server(server, {
     cors:{
-        origin:"https://your-frontend.netlify.app",
+        origin:"https://poll-app-abhinavnaman.vercel.app",
         methods: ["GET", "POST"],
     }
 })
