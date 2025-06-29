@@ -17,6 +17,7 @@ const TeacherPanel = () => {
   const [showHistory, setShowHistory] = useState(false);
   const [loading, setLoading] = useState(false);
 
+const URL = `${process.env.REACT_APP_BASE_URL}/api/polls`;
   useEffect(() => {
     const fetchClassroom = async () => {
       const res = await fetchWithAuth("/api/classroom/mine");
@@ -29,7 +30,7 @@ const TeacherPanel = () => {
   const fetchPollHistory = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:8000/api/polls");
+      const res = await fetch(URL);
       const data = await res.json();
       setPollHistory(data);
       setShowHistory(true);
