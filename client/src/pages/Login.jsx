@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const URL = `${process.env.BASE_URL}/api/auth/login`;
+  const URL = `${process.env.REACT_APP_BASE_URL}/api/auth/login`;
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: '', password: '' });
 
