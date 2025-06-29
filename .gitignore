@@ -1,0 +1,21 @@
+# Root-level
+node_modules/
+.env
+.env.local
+
+# Client (React)
+client/node_modules/
+client/.env
+client/.env.local
+
+
+# Server (Node/Express)
+server/node_modules/
+server/.env
+server/.env.local
+
+
+
+
+
+

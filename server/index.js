@@ -19,7 +19,7 @@ app.use('/api/auth', authRoutes); // Use the auth routes for handling authentica
 app.use('/api/classroom', classroomRoutes); // Use the classroom routes with authentication middleware
 //app.use(cors({ origin: 'http://localhost:3000' }));
 
-mongoose.connect('mongodb+srv://mongodb:mongodb@poll-socketio.ofau4wc.mongodb.net/?retryWrites=true&w=majority&appName=poll-socketio', {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(()=>{
